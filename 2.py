@@ -1,16 +1,25 @@
-def count_upper_lower(string):
-    upper_count = 0
-    lower_count = 0
-
-    for char in string:
-        if char.isupper():
-            upper_count += 1
-        elif char.islower():
-            lower_count += 1
-
-    return (upper_count, lower_count)
+import os
 
 
-my_string = "TujiFKGhbg"
-result = count_upper_lower(my_string)
-print(result)
+def check_access(path):
+    if os.path.exists(path):
+        if os.access(path, os.R_OK):
+            print("Read access granted.")
+        else:
+            print("Read access denied.")
+
+        if os.access(path, os.W_OK):
+            print("Write access granted.")
+        else:
+            print("Write access denied.")
+
+        if os.access(path, os.X_OK):
+            print("Execute access granted.")
+        else:
+            print("Execute access denied.")
+    else:
+        print("The specified path does not exist.")
+
+
+my_path = "/path/to/directory"
+check_access(my_path)

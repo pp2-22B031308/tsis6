@@ -1,11 +1,15 @@
-def is_palindrome(string):
-    reversed_string = string[::-1]
-    if string == reversed_string:
-        return True
+import os
+
+
+def test_path(path):
+    if os.path.exists(path):
+        dirname, filename = os.path.split(path)
+        print("Path exists.")
+        print("Directory:", dirname)
+        print("Filename:", filename)
     else:
-        return False
-my_string = "fh,mv"
-if is_palindrome(my_string):
-    print(my_string, "is a palindrome")
-else:
-    print(my_string, "is not a palindrome")
+        print("Path does not exist.")
+
+
+my_path = "/path/to/myfile.txt"
+test_path(my_path)

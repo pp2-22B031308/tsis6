@@ -1,7 +1,6 @@
-def trues(tuple):
-    return all (tuple)
+my_list = ["fefwd", "bafwddwfnana", "ofwrefawndge", "grfewafewfwpe"]
 
-tuple = (True, True,True)
-result = trues(tuple)
 
-print (result)
+with open("my_file.txt", "w") as file:
+    for item in my_list:
+        file.write(item + "\n")
